@@ -1,6 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
-import React from "react";
+import DarkModeToggle from "./components/DarkModeToggle";
 import NavBar from "./components/NavBar";
 import AllEntries from "./routes/AllEntries";
 import EditEntry from "./routes/EditEntry";
@@ -12,6 +12,7 @@ export default function App() {
     <section>
       <Router>
         <EntryProvider>
+          <DarkModeToggle></DarkModeToggle>
           <NavBar></NavBar>
           <Routes>
             <Route path="/" element={<AllEntries />}></Route>
