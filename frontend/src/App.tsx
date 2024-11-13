@@ -12,8 +12,10 @@ export default function App() {
     <section>
       <Router>
         <EntryProvider>
-          <DarkModeToggle></DarkModeToggle>
-          <NavBar></NavBar>
+          <div className="flex justify-between">
+            <NavBar></NavBar>
+            <DarkModeToggle></DarkModeToggle>
+          </div>
           <Routes>
             <Route path="/" element={<AllEntries />}></Route>
             <Route path="create" element={<NewEntry />}></Route>
