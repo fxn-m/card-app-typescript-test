@@ -35,7 +35,7 @@ export default function AllEntries() {
             <p className="text-center text-lg font-light md:mt-2 md:mb-4 mt-1 mb-3 dark:text-gray-300">
               {entry.description}
             </p>
-            <section className="flex items-center justify-between flex-col md:flex-row pt-2 md:pt-0">
+            <section className="flex items-center justify-center flex-col md:flex-row md:flex-wrap pt-2 md:pt-0">
               <div className="flex justify-center">
                 <button
                   onClick={() => {
@@ -54,9 +54,20 @@ export default function AllEntries() {
                   🖊
                 </button>
               </div>
-              <time className="text-right text-sm md:text-lg dark:text-gray-400">
-                {new Date(entry.created_at.toString()).toLocaleDateString()}
-              </time>
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm dark:text-gray-400 mr-4 min-w-[60px] text-right">Created:</span>
+                  <time className="text-right text-sm dark:text-gray-400">
+                    {new Date(entry.created_at.toString()).toLocaleDateString()}
+                  </time>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm dark:text-gray-400 mr-4 min-w-[60px] text-right">Due:</span>
+                  <time className="text-right text-sm dark:text-gray-400">
+                    {new Date(entry.scheduled_date.toString()).toLocaleDateString()}
+                  </time>
+                </div>
+              </div>
             </section>
           </div>
         );

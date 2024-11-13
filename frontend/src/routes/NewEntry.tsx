@@ -4,7 +4,7 @@ import { Entry, EntryContextType } from "../@types/context";
 import { EntryContext } from "../utilities/globalContext";
 
 export default function NewEntry() {
-  const emptyEntry: Entry = { title: "", description: "", created_at: new Date() };
+  const emptyEntry: Entry = { title: "", description: "", created_at: new Date(), scheduled_date: new Date() };
   const { saveEntry } = useContext(EntryContext) as EntryContextType;
   const [newEntry, setNewEntry] = useState<Entry>(emptyEntry);
 
@@ -42,6 +42,13 @@ export default function NewEntry() {
         type="date"
         name="created_at"
         value={new Date(newEntry.created_at).toISOString().split("T")[0]}
+        onChange={handleInputChange}
+      />
+      <input
+        className="p-3 rounded-md bg-white dark:bg-gray-700 dark:text-gray-200"
+        type="date"
+        name="scheduled_date"
+        value={new Date(newEntry.scheduled_date).toISOString().split("T")[0]}
         onChange={handleInputChange}
       />
       <button
