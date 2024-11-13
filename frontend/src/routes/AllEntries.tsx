@@ -29,7 +29,7 @@ export default function AllEntries() {
           <div
             id={entry.id}
             key={index}
-            className="bg-gray-300 shadow-md shadow-gray-500 m-3 p-4 rounded flex flex-col justify-between dark:bg-gray-800 dark:shadow-gray-700"
+            className="bg-gray-300 break-words shadow-md shadow-gray-500 m-3 p-4 rounded flex flex-col justify-between dark:bg-gray-800 dark:shadow-gray-700"
           >
             <h1 className="font-bold text-sm md:text-lg dark:text-gray-100">{entry.title}</h1>
             <p className="text-center text-lg font-light md:mt-2 md:mb-4 mt-1 mb-3 dark:text-gray-300">
