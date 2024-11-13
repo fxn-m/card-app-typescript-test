@@ -31,16 +31,9 @@ const DarkModeToggle = () => {
 
   return (
     <div className="flex align-middle justify-end">
-      <button
-        onClick={toggleTheme}
-        className="text-xl p-2 m-4 w-12 aspect-square rounded-full relative group"
-        aria-label="Toggle Dark Mode"
-      >
+      <button onClick={toggleTheme} className="text-xl p-2 m-4 w-12 aspect-square rounded-full relative group">
         {theme === "dark" ? "🌙" : theme === "light" ? "☀️" : "🖥️"}
-        <span
-          className="absolute right-full top-1/2 transform -translate-y-1/2 ml-2 px-2 py-1 text-xs text-gray-400 rounded opacity-0 group-hover:opacity-100 "
-          role="tooltip"
-        >
+        <span className="absolute right-3/4 top-1/2 transform -translate-y-1/2 ml-2 px-2 py-1 text-xs text-gray-400 opacity-0 group-hover:opacity-100 ">
           {currentThemeLabel}
         </span>
       </button>
